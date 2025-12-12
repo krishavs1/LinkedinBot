@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.linkedinbot</string>
+    
+    <key>ProgramArguments</key>
+    <array>
+        <string>/opt/homebrew/bin/python3</string>
+        <string>/Users/krishavsingla/LinkedInBot/bot.py</string>
+    </array>
+    
+    <key>WorkingDirectory</key>
+    <string>/Users/krishavsingla/LinkedInBot</string>
+    
+    <key>RunAtLoad</key>
+    <true/>
+    
+    <key>KeepAlive</key>
+    <true/>
+    
+    <key>StandardOutPath</key>
+    <string>/Users/krishavsingla/LinkedInBot/bot.log</string>
+    
+    <key>StandardErrorPath</key>
+    <string>/Users/krishavsingla/LinkedInBot/bot.error.log</string>
+    
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+        <key>EMAIL_SENDER</key>
+        <string>YOUR_EMAIL@gmail.com</string>
+        <key>EMAIL_PASSWORD</key>
+        <string>YOUR_APP_PASSWORD</string>
+        <key>EMAIL_RECIPIENT</key>
+        <string>YOUR_RECIPIENT@gmail.com</string>
+        <key>LINKEDIN_URL</key>
+        <string>https://www.linkedin.com/jobs/search/?keywords=software%20engineer%20intern&f_TPR=r300&f_E=1</string>
+    </dict>
+</dict>
+</plist>
+

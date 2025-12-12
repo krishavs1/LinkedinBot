@@ -65,6 +65,54 @@ export SMTP_PORT="587"  # Default
 - `scrape.py` - Scraper that extracts job postings from LinkedIn
 - `sent_jobs.json` - Tracks which jobs have been sent (created automatically)
 
+## Running as a Background Service (macOS)
+
+To run the bot continuously in the background (even when your laptop is closed):
+
+1. **Configure the service** with your email credentials:
+   ```bash
+   ./configure_service.sh
+   ```
+   This will prompt you for your email settings and update the configuration.
+
+2. **Set up the service**:
+   ```bash
+   ./setup_service.sh
+   ```
+
+3. **The bot will now:**
+   - Run automatically in the background
+   - Start automatically when you log in
+   - Restart automatically if it crashes
+   - Continue running even when your laptop lid is closed (if plugged in)
+
+4. **Manage the service**:
+   ```bash
+   # Check if it's running
+   launchctl list | grep linkedinbot
+   
+   # View logs
+   tail -f bot.log
+   
+   # Stop the service
+   ./stop_service.sh
+   
+   # Start the service
+   ./start_service.sh
+   ```
+
+**Note**: For the bot to run when your laptop lid is closed, make sure:
+- Your Mac is plugged into power
+- System Settings → Battery → "Prevent automatic sleeping when display is off" is enabled (or use `caffeinate`)
+
+## Alternative: Cloud Hosting
+
+If you want it to run 24/7 without keeping your Mac on, consider:
+- **Heroku** (free tier available)
+- **AWS EC2** (free tier for 12 months)
+- **DigitalOcean** ($5/month)
+- **Raspberry Pi** (one-time cost, runs at home)
+
 ## Notes
 
 - The bot uses Selenium to handle JavaScript-rendered content
